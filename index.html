@@ -14,6 +14,14 @@ body {
   padding:0;
 }
 
+/* منع الضغط المطوّل ومنع حفظ الصور */
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none; /* يمنع فتح الصورة عند الضغط المطوّل */
+}
+
 .banner {
   position:relative;
   width:90%;
@@ -127,6 +135,14 @@ body {
 </head>
 <body>
 
+<!-- لمنع الضغط المطوّل في كل الصفحة -->
+<script>
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('touchstart', function(e){
+    if(e.touches.length > 1){ e.preventDefault(); }
+}, { passive:false });
+</script>
+
 <div class="banner">
   <img src="https://i.postimg.cc/brHSXt8t/IMG-1482.jpg">
 </div>
@@ -148,7 +164,7 @@ body {
 
 <div class="gallery">
 
-  <!-- 1 — الصورة التي طلبت تعديلها -->
+  <!-- 1 -->
   <div class="gallery-item">
     <img src="https://i.postimg.cc/kgVMKbZ1/Untitled-2-December-2025-22-22-34-copy-(1).jpg">
     <div class="lock-wrapper">
