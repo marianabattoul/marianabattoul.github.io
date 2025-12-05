@@ -14,33 +14,29 @@ body {
   padding:0;
 }
 
-/* ---- تمت إضافة التدرّج هنا فقط ---- */
 .banner {
   position:relative;
   width:90%;
   max-width:1200px;
   margin:20px auto;
   box-shadow: 0 80px 100px -40px rgba(0,0,0,0.9);
-  overflow:hidden;
 }
-
 .banner img {
   width:100%;
   height:auto;
   display:block;
 }
 
+/* تدرّج أسود من الأسفل */
 .banner::after {
   content:"";
   position:absolute;
-  top:0;
   left:0;
+  bottom:0;
   width:100%;
-  height:100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0));
-  pointer-events:none;
+  height:40%;
+  background:linear-gradient(to bottom, transparent, black);
 }
-/* ------------------------------- */
 
 .banner-name {
   margin-top:10px;
@@ -152,7 +148,7 @@ body {
 
 <div class="gallery">
 
-  <!-- 1 -->
+  <!-- 1 — الصورة التي طلبت تعديلها -->
   <div class="gallery-item">
     <img src="https://i.postimg.cc/kgVMKbZ1/Untitled-2-December-2025-22-22-34-copy-(1).jpg">
     <div class="lock-wrapper">
